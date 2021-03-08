@@ -1,6 +1,8 @@
 'use strict'
 
 
+
+
 const Seattle ={
     name :'Seattle',
     min :23 ,
@@ -30,6 +32,9 @@ const Seattle ={
    }
  },
 };
+
+Seattle.getNumcustomer();
+Seattle.reselt();
 
 
 
@@ -62,6 +67,9 @@ const Tokyo ={
    }
  },
 };
+
+Tokyo.getNumcustomer();
+Tokyo.reselt();
 
 
 
@@ -96,6 +104,10 @@ const Dubai ={
  },
 };
 
+Dubai.getNumcookies();
+Dubai.reselt();
+
+
 
 const Paris ={
     name :'Paris',
@@ -127,6 +139,9 @@ const Paris ={
  },
 };
 
+Paris.getNumcookies();
+Paris.reselt();
+
 
 
 const Lima ={
@@ -136,7 +151,7 @@ const Lima ={
     avg :4.6,
     workHour: ['6am','7am','8am','9am','10am','11am','12am','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'],
     cookiesArr : [] ,
-    
+
 
    getNumcustomer: function(){
        let Ncustomer=Math.floor(Math.random()*(this.max - this.min + 1) +this.min);
@@ -147,6 +162,7 @@ const Lima ={
    getNumcookies: function(){
        return Math.floor(this.avg * this.getNumcustomer());
        },
+
 
  reselt: function(){
    let method = document.getElementById(this.name);
@@ -159,12 +175,10 @@ const Lima ={
    }
  },
 };
+ 
 
-
-Seattle.getNumcustomer();
-Seattle.reselt();
-Tokyo.reselt();
-Dubai.reselt();
-Paris.reselt();
+Lima. getNumcookies();
 Lima.reselt();
-console.log()
+console.log();
+
+
