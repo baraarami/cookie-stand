@@ -31,7 +31,8 @@ const Seattle ={
  },
 };
 
-
+Seattle.getNumcustomer();
+Seattle.reselt();
 
 const Tokyo ={
     name :'Tokyo',
@@ -63,6 +64,8 @@ const Tokyo ={
  },
 };
 
+Tokyo.getNumcustomer();
+Tokyo.reselt();
 
 
 const Dubai ={
@@ -96,6 +99,8 @@ const Dubai ={
  },
 };
 
+Dubai.getNumcookies();
+Dubai.reselt();
 
 const Paris ={
     name :'Paris',
@@ -127,7 +132,8 @@ const Paris ={
  },
 };
 
-
+Paris.getNumcookies();
+Paris.reselt();
 
 const Lima ={
     name :'Lima',
@@ -160,11 +166,8 @@ const Lima ={
  },
 };
 
-
-Seattle.getNumcustomer();
-Seattle.reselt();
-Tokyo.reselt();
-Dubai.reselt();
-Paris.reselt();
+Lima. getNumcookies();
 Lima.reselt();
-console.log()
+console.log();
+
+
