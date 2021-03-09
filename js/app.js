@@ -22,9 +22,11 @@ const Seattle ={
        },
 
  reselt: function(){
+     let sum =0;
    let method = document.getElementById(this.name);
    for (let i=0; i< this.workHour.length;i++){
        this.cookiesArr.push(this.getNumcookies());
+       sum+=this.cookiesArr[i];
        let liElement = document.createElement('li');
        liElement.innerText=this.workHour[i] + ':' + this.getNumcookies()+ 'Cookies';
        method.appendChild(liElement);
@@ -57,9 +59,11 @@ const Tokyo ={
        },
 
  reselt: function(){
+        let sum =0;
    let method = document.getElementById(this.name);
    for (let i=0; i< this.workHour.length;i++){
        this.cookiesArr.push(this.getNumcookies());
+       sum+=this.cookiesArr[i];
        let liElement = document.createElement('li');
        liElement.innerText=this.workHour[i] + ':' + this.getNumcookies()+ 'Cookies';
        method.appendChild(liElement);
@@ -93,9 +97,11 @@ const Dubai ={
        },
 
  reselt: function(){
+        let sum =0;
    let method = document.getElementById(this.name);
    for (let i=0; i< this.workHour.length;i++){
        this.cookiesArr.push(this.getNumcookies());
+       sum+=this.cookiesArr[i];
        let liElement = document.createElement('li');
        liElement.innerText=this.workHour[i] + ':' + this.getNumcookies()+ 'Cookies';
        method.appendChild(liElement);
@@ -128,9 +134,11 @@ const Paris ={
        },
 
  reselt: function(){
+        let sum =0;
    let method = document.getElementById(this.name);
    for (let i=0; i< this.workHour.length;i++){
        this.cookiesArr.push(this.getNumcookies());
+       sum+=this.cookiesArr[i];
        let liElement = document.createElement('li');
        liElement.innerText=this.workHour[i] + ':' + this.getNumcookies()+ 'Cookies';
        method.appendChild(liElement);
@@ -165,9 +173,11 @@ const Lima ={
 
 
  reselt: function(){
+        let sum =0;
    let method = document.getElementById(this.name);
    for (let i=0; i< this.workHour.length;i++){
        this.cookiesArr.push(this.getNumcookies());
+       sum+=this.cookiesArr[i];
        let liElement = document.createElement('li');
        liElement.innerText=this.workHour[i] + ':' + this.getNumcookies()+ 'Cookies';
        method.appendChild(liElement);
