@@ -6,3 +6,12 @@
      left:400;
      top:20;
 }
+
+table{
+    border: 2px;
+}
+td ,tr , th {
+    border: 2px;
+    border-color: brown;
+    border-collapse: collapse;
+}
