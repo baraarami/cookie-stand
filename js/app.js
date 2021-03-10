@@ -190,8 +190,8 @@ console.log();
 */
 
 //// lab 07 make a consrtructer function to the cookies-stand project 
-let tabel = document.getElementById('tabel');
-let workHour =['6am','7am','8am','9am','10am','11am','12am','1pm','2pm','3pm','4pm'];
+let tabel20 = document.getElementById('tabel');
+ workHour =['6am','7am','8am','9am','10am','11am','12am','1pm','2pm','3pm','4pm'];
 function City(name , minCustomerHourly , maxCustomerHourly , avgCustemetCookies ){
   this.name =name;
   this.minCustomerHourly = minCustomerHourly;
@@ -239,9 +239,9 @@ function City(name , minCustomerHourly , maxCustomerHourly , avgCustemetCookies 
 
 function head (){
   let headR = document.createElement('tr');
-  tabel.appendChild(headR);
+  tabel20.appendChild(headR);
   let tableh = document.createElement('th');
-  tr.appendChild(tableh);
+  headR.appendChild(tableh);
   tableh.textContent= '     ';
   for (let i =0 ; i < workHour.length ; i++ ){
     let th =document.createElement('th');
@@ -256,9 +256,8 @@ head();
 
 let totals=0;
 City.prototype.render = function(){
-  let totals =0;
   let row =document.createElement('tr');
-  tabel.appendChild(row);
+  tabel20.appendChild(row);
   let dataRow = document.createElement('td');
   row.appendChild(dataRow);
   dataRow.textContent= this.name;
@@ -274,24 +273,24 @@ dataRow3.textContent=this.totalCookiesPerDay;
 }
 
 function creatFooter(){
+  let totals1=0;
   let tr =document.createElement('tr');
-  tabel.appendChild(tr);
-  let th=document.createElement('th');
+  tabel20.appendChild(tr);
+  let th=document.createElement('td');
   tr.appendChild(th);
   th.textContent= 'totalCookiesPerDay';
-  for (let m=0 ; m< Seattle.totalCookiesPerHour.length ; m++)
+  for (let m=0 ; m < workHour.length ; m++)
   {
     for (let i=0 ; i< Element.length ; i++){
       totals+=Element[i].CookiesPerHour[m];
-      totals1+=Element[i].CookiesPerHour[m];
-    }
-    let rowData = document.createElement('td');
-    rowk.appendChild(rowData);
-    rowData.textContent=totals ;
+      totals1+=Element[i].CookiesPerHour[m];}
+    let th = document.createElement('td');
+    tr.appendChild(th);
+    th.textContent=totals ;
     totals =0 ; }
-    let rowData =document.createElement('td');
-    row5,appendChild(rowData);
-    rowData.textContent =totals1;
+    let th =document.createElement('td');
+    tr,appendChild(th);
+    th.textContent =totals1;
   }
 Seattle.render();
 Tokyo.render();
@@ -300,3 +299,24 @@ Paris.render();
 Lima();
 
 creatFooter( Seattle , Tokyo , Dubai , Paris , Lima );
+
+
+function bebofunction(){
+  bebo=document.creatElementById("name");
+  
+  b=document.creatElementById("min");
+  b=parseInt(b);
+
+  sara=document,creatElementById("max");
+  sara=parseInt(sara);
+
+  zezo=document.creatElementById("Avarege");
+  zezo=parseInt(zezo);
+
+  let add = new City(bebo , b , sara , zezo);
+  add.getNumber();
+  add.getcockisPerHour();
+  add.render();
+  console.log(City(bebo , b , sara , zezo));
+}
+

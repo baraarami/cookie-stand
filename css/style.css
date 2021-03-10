@@ -9,9 +9,47 @@
 
 table{
     border: 2px;
+    background-color: darkgrey;
 }
 td ,tr , th {
     border: 2px;
     border-color: brown;
     border-collapse: collapse;
 }
+
+header:hover {
+    font-size: large;
+}
+
+h1, h2 {
+    border-radius: 6px;
+    text-align: center;
+    background-color: darksalmon;
+    color: dimgrey;
+    margin-bottom: 0%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#p{
+    text-align: center;
+    background-color:rgb(236, 208, 165) ;
+    color: rgb(114, 11, 11);
+    margin-top: 0%;
+    
+}
+
+#fieldset{
+    background-color:brown;
+    font-size: large;
+    font-weight: bold;
+    background-size:auto;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+legend{
+    color: black;
+    background-color:white;
+    font-size:large;
+
+}
+
