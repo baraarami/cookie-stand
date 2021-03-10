@@ -182,7 +182,7 @@ console.log();
 //// lab 07 make a consrtructer function to the cookies-stand project 
 let tabel = document.getElementById('Tabel');
 
-let Head =  ['Citys'.'6am','7am','8am','9am','10am','11am','12am','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'] ;
+
 
 function head (){
   let tabel =document.createElement
@@ -192,7 +192,7 @@ function head (){
     tHead.textContent = Head[i];
   }
 }
-
+head =( ['Citys'.'6am','7am','8am','9am','10am','11am','12am','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm']) ;
 
 let workHour =['6am','7am','8am','9am','10am','11am','12am','1pm','2pm','3pm','4pm'];
 function City(name , minCustomerHourly , maxCustomerHourly , avgCustemetCookies ){
