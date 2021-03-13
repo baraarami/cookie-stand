@@ -41,7 +41,9 @@ City.prototype.getNum = function () {
 };
 
 
-const header = function () {
+
+
+const creatheader = function () {
   const parentElement = document.getElementById('SALAMON');
   const table = document.createElement('table');
   parentElement.appendChild(table);
@@ -55,7 +57,7 @@ const header = function () {
   }
 };
 
-header();
+creatheader();
 
 
 City.prototype.render = function () {
@@ -126,7 +128,7 @@ const cityRaw = function () {
 };
 
 
-const footer = function () {
+const creatfooter = function () {
   const tableElement = document.getElementById('myTable');
   const tr = document.createElement('tr');
   tableElement.appendChild(tr);
@@ -159,13 +161,14 @@ const footer = function () {
 };
 
 
-footer();
+creatfooter();
 
 
 const formElement = document.getElementById('ADD-NEW-LOCATION');
 formElement.addEventListener('submit', function (event) {
   event.preventDefault();
 
+  
   const cityName = event.target.name.value;
   const minNumOfCustomers = event.target.min.value;
   const maxNumOfCustomers = event.target.max.value;
@@ -177,16 +180,22 @@ formElement.addEventListener('submit', function (event) {
 
     formElement.reset();
 
+
     city.getNum();
     city.render();
     console.log(City.ACity);
-    footer();
+    creatfooter();
   }
+
   else {
     alert('please make the Max.Num Of Customers value greater than the Min.Num Of Customers value');
     console.log(alert);
+
   }
+
 });
+
+
 
 
 
