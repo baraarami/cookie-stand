@@ -9,6 +9,8 @@ let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '
 let columnHeader = ['Sales/h', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', 'Daily Location Total'];
 
 
+
+
 function generateRandomNumber(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -39,6 +41,8 @@ City.prototype.getNum = function () {
   }
 };
 
+
+
 const creatHeader = function () {
   const parentElement = document.getElementById('SALAMON');
   const table = document.createElement('table');
@@ -52,6 +56,9 @@ const creatHeader = function () {
     th1.textContent = columnHeader[i];
   }
 };
+
+
+
 
 creatHeader();
 
@@ -73,6 +80,7 @@ City.prototype.render = function () {
   tr.appendChild(td3);
   td3.textContent = this.total;
 };
+
 
 
 
@@ -184,3 +192,5 @@ formElement.addEventListener('submit', function (event) {
     console.log(alert);
   }
 });}
+
+
