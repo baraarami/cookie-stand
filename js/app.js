@@ -1,16 +1,15 @@
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
-//MAKE COLUMN HEADER AS GLOBAL
 let columnHeader = ['Sales/h', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', 'Daily Location Total'];
 
-// //MAIN FUNCTION
+
 function generateRandomNumber(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-//MAIN CONSTRUCTORS
+
 function City(name, min, max, avarage) {
   this.name = name;
   this.min = min;
@@ -19,26 +18,24 @@ function City(name, min, max, avarage) {
   this.numOfCookiesArr = [];
   this.total = 0;
   this.totalPerHour = 0;
-  City.allCity.push(this);
+  City.ACity.push(this);
 }
 
-City.allCity = [];
+City.ACity = [];
 
-//PROTOTYPE FOR GET NUM OF COOKIES
-City.prototype.getNumOfCookies = function () {
+City.prototype.getNum = function () {
   for (let i = 0; i < hours.length; i++) {
     let cookiesNum = Math.floor(generateRandomNumber(this.min, this.max) * this.avarage);
     this.numOfCookiesArr.push(cookiesNum);
 
-    //3rd step calculate total number of cookies :
+
     this.total += cookiesNum;
 
 
   }
 };
 
-//HEADER FUNCTION
-const header = function () {
+const creatHeader = function () {
   const parentElement = document.getElementById('SALAMON');
   const table = document.createElement('table');
   parentElement.appendChild(table);
@@ -51,10 +48,9 @@ const header = function () {
     th1.textContent = columnHeader[i];
   }
 };
-//CALLING HEADER FUNCTION
-header();
+creatHeader();
 
-//PROTOTYPE FOR RENDER
+
 City.prototype.render = function () {
   const tableElement = document.getElementById('myTable');
   const tr = document.createElement('tr');
@@ -77,32 +73,29 @@ City.prototype.render = function () {
 
 
 
-//SEATTLE CITY
+
 const seattle = new City('Seattle', 23, 65, 6.3, []);
-seattle.getNumOfCookies();
+seattle.getNum();
 seattle.render();
-//TOKYO CITY
+
 const tokyo = new City('Tokyo', 3, 24, 1.2, []);
-tokyo.getNumOfCookies();
+tokyo.getNum();
 tokyo.render();
-//DUBAI CITY
+
 const dubai = new City('Dubai', 11, 38, 3.7, []);
-dubai.getNumOfCookies();
+dubai.getNum();
 dubai.render();
-//PARIS CITY
+
 const paris = new City('Paris', 20, 38, 2.3, []);
-paris.getNumOfCookies();
+paris.getNum();
 paris.render();
-//LIMA CITY
+
 const lima = new City('Lima', 2, 16, 4.6, []);
-lima.getNumOfCookies();
+lima.getNum();
 lima.render();
 
-console.log(City.allCity);
+console.log(City.ACity);
 
-
-
-// Lab: 09 - Add a form to the cookie stand project
 
 
 const footer = function () {
@@ -116,30 +109,28 @@ const footer = function () {
     const th2 = document.createElement('th');
     tr.appendChild(th2);
 
-    // FOR LAB 09 1ST STEP TO MAKE THE TOTAL SUM OTHER NEW CITIES
+
     let totalCookies = 0;
-    for (let j = 0; j < City.allCity.length; j++) {
-      totalCookies += parseInt(City.allCity[j].numOfCookiesArr[i]);
+    for (let j = 0; j < City.ACity.length; j++) {
+      totalCookies += parseInt(City.ACity[j].numOfCookiesArr[i]);
     }
     th2.textContent = totalCookies;
+ }
 
-    //   th2.textContent = seattle.numOfCookiesArr[i] + tokyo.numOfCookiesArr[i] + dubai.numOfCookiesArr[i] + paris.numOfCookiesArr[i] + lima.numOfCookiesArr[i];
-  }
-
-  // for (let i = 0; i < hours.length; i++) {
+  
   const th3 = document.createElement('th');
   tr.appendChild(th3);
   let totalOfTotal = 0;
-  for (let g = 0; g < City.allCity.length; g++) {
-    totalOfTotal += City.allCity[g].total;
+  for (let g = 0; g < City.ACity.length; g++) {
+    totalOfTotal += City.ACity[g].total;
   }
 
   th3.textContent = totalOfTotal;
-  // }
-  console.log(City.allCity);
+
+  console.log(City.ACity);
 };
 
-//CALLING FOOTER FUNCTION
+
 footer();
 
 // STEP 2 FOR LAB 09
@@ -159,9 +150,9 @@ formElement.addEventListener('submit', function (event) {
 
     formElement.reset();
 
-    city.getNumOfCookies();
+    city.getNum();
     city.render();
-    console.log(City.allCity);
+    console.log(City.ACity);
     footer();
   }
   else {
