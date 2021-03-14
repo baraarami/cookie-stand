@@ -1,5 +1,6 @@
 'use strict'
 
+
 //// lab 07 make a consrtructer function to the cookies-stand project 
 
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
@@ -14,7 +15,6 @@ function generateRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-
 function City(name, min, max, avarage) {
   this.name = name;
   this.min = min;
@@ -28,7 +28,6 @@ function City(name, min, max, avarage) {
 
 City.ACity = [];
 
-
 City.prototype.getNum = function () {
   for (let i = 0; i < hours.length; i++) {
     let cookiesNum = Math.floor(generateRandomNumber(this.min, this.max) * this.avarage);
@@ -40,10 +39,7 @@ City.prototype.getNum = function () {
   }
 };
 
-
-
-
-const creatheader = function () {
+const creatHeader = function () {
   const parentElement = document.getElementById('SALAMON');
   const table = document.createElement('table');
   parentElement.appendChild(table);
@@ -57,7 +53,7 @@ const creatheader = function () {
   }
 };
 
-creatheader();
+creatHeader();
 
 
 City.prototype.render = function () {
@@ -103,32 +99,32 @@ const lima = new City('Lima', 2, 16, 4.6, []);
 lima.getNum();
 lima.render();
 
-console.log(City.City);
+console.log(City.ACity);
 
 
 
 
 
+//NEW CITY RAW FUNCTION
+const cityRaw = function () {
+  const tableElement = document.getElementById('myTable');
+  const tr = document.createElement('tr');
+  tableElement.appendChild(tr);
+  const th1 = document.createElement('th');
+  tr.appendChild(th1);
+  th1.textContent = 'Total of total';
+  for (let i = 0; i < hours.length; i++) {
+    const th2 = document.createElement('th');
+    tr.appendChild(th2);
+    th2.textContent = seattle.numOfCookiesArr[i] + tokyo.numOfCookiesArr[i] + dubai.numOfCookiesArr[i] + paris.numOfCookiesArr[i] + lima.numOfCookiesArr[i];
+  }
+  const th3 = document.createElement('th');
+  tr.appendChild(th3);
+  th3.textContent = seattle.total + tokyo.total + dubai.total + paris.total + lima.total;
+};
 
-// const cityRaw = function () {
-//   const tableElement = document.getElementById('myTable');
-//   const tr = document.createElement('tr');
-//   tableElement.appendChild(tr);
-//   const th1 = document.createElement('th');
-//   tr.appendChild(th1);
-//   th1.textContent = 'Total of total';
-//   for (let i = 0; i < hours.length; i++) {
-//     const th2 = document.createElement('th');
-//     tr.appendChild(th2);
-//     th2.textContent = seattle.numOfCookiesArr[i] + tokyo.numOfCookiesArr[i] + dubai.numOfCookiesArr[i] + paris.numOfCookiesArr[i] + lima.numOfCookiesArr[i];
-//   }
-//   const th3 = document.createElement('th');
-//   tr.appendChild(th3);
-//   th3.textContent = seattle.total + tokyo.total + dubai.total + paris.total + lima.total;
-// };
 
-
-const creatfooter = function () {
+const creatFooter = function () {
   const tableElement = document.getElementById('myTable');
   const tr = document.createElement('tr');
   tableElement.appendChild(tr);
@@ -139,35 +135,33 @@ const creatfooter = function () {
     const th2 = document.createElement('th');
     tr.appendChild(th2);
 
-    
+   
     let totalCookies = 0;
-    for (let M = 0; M < City.ACity.length; M++) {
-      totalCookies += parseInt(City.ACity[M].numOfCookiesArr[i]);
+    for (let j = 0; j < City.ACity.length; j++) {
+      totalCookies += parseInt(City.ACity[j].numOfCookiesArr[i]);
     }
     th2.textContent = totalCookies;
 
-   }
 
   const th3 = document.createElement('th');
   tr.appendChild(th3);
   let totalOfTotal = 0;
-  for (let B = 0; B < City.ACity.length; B++) {
-    totalOfTotal += City.ACity[B].total;
+  for (let g = 0; g < City.ACity.length; g++) {
+    totalOfTotal += City.ACity[g].total;
   }
 
   th3.textContent = totalOfTotal;
-  
+
   console.log(City.ACity);
 };
 
 
-creatfooter();
+creatFooter();
 
 
 const formElement = document.getElementById('ADD-NEW-LOCATION');
 formElement.addEventListener('submit', function (event) {
   event.preventDefault();
-
 
   const cityName = event.target.name.value;
   const minNumOfCustomers = event.target.min.value;
@@ -180,22 +174,13 @@ formElement.addEventListener('submit', function (event) {
 
     formElement.reset();
 
-
     city.getNum();
     city.render();
     console.log(City.ACity);
-    creatfooter();
+    footer();
   }
-
   else {
     alert('please make the Max.Num Of Customers value greater than the Min.Num Of Customers value');
     console.log(alert);
-
   }
-
-});
-
-
-
-
-
+});}
